@@ -31,9 +31,8 @@
             btnCloseApp = new Button();
             btnMinimizeApp = new Button();
             panel3 = new Panel();
-            button1 = new Button();
             btnDeleteList = new Button();
-            checkBox1 = new CheckBox();
+            todoCheckBox = new CheckBox();
             btnDelete = new Button();
             btnClear = new Button();
             btnSave = new Button();
@@ -79,9 +78,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(button1);
             panel3.Controls.Add(btnDeleteList);
-            panel3.Controls.Add(checkBox1);
+            panel3.Controls.Add(todoCheckBox);
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnClear);
             panel3.Controls.Add(btnSave);
@@ -94,20 +92,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1103, 568);
             panel3.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(56, 58, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(937, 148);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 52);
-            button1.TabIndex = 11;
-            button1.Text = "REFRESH";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // btnDeleteList
             // 
@@ -123,17 +107,17 @@
             btnDeleteList.UseVisualStyleBackColor = false;
             btnDeleteList.Click += btnDeleteList_Click;
             // 
-            // checkBox1
+            // todoCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.FromArgb(56, 58, 64);
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(545, 136);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(78, 19);
-            checkBox1.TabIndex = 9;
-            checkBox1.Text = "Completa";
-            checkBox1.UseVisualStyleBackColor = false;
+            todoCheckBox.AutoSize = true;
+            todoCheckBox.BackColor = Color.FromArgb(56, 58, 64);
+            todoCheckBox.ForeColor = Color.White;
+            todoCheckBox.Location = new Point(545, 136);
+            todoCheckBox.Name = "todoCheckBox";
+            todoCheckBox.Size = new Size(78, 19);
+            todoCheckBox.TabIndex = 9;
+            todoCheckBox.Text = "Completa";
+            todoCheckBox.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
@@ -190,30 +174,29 @@
             listViewTodo.TileSize = new Size(10, 10);
             listViewTodo.UseCompatibleStateImageBehavior = false;
             listViewTodo.View = View.Details;
-            listViewTodo.SelectedIndexChanged += todoList_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Tarefa";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 250;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Descrição";
             columnHeader2.TextAlign = HorizontalAlignment.Center;
-            columnHeader2.Width = 80;
+            columnHeader2.Width = 250;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Data";
             columnHeader3.TextAlign = HorizontalAlignment.Center;
-            columnHeader3.Width = 80;
+            columnHeader3.Width = 250;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Finalizada";
             columnHeader4.TextAlign = HorizontalAlignment.Center;
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 240;
             // 
             // label2
             // 
@@ -236,8 +219,7 @@
             todoDescText.Name = "todoDescText";
             todoDescText.Size = new Size(455, 24);
             todoDescText.TabIndex = 3;
-            todoDescText.Text = "sdsdsd";
-            todoDescText.TextChanged += richTextBox2_TextChanged;
+            todoDescText.Text = "";
             // 
             // label1
             // 
@@ -261,7 +243,7 @@
             todoText.Name = "todoText";
             todoText.Size = new Size(455, 24);
             todoText.TabIndex = 1;
-            todoText.Text = "sdsdsd";
+            todoText.Text = "";
             // 
             // Form1
             // 
@@ -294,12 +276,11 @@
         private Button btnSave;
         private Button btnDelete;
         private Button btnClear;
-        private CheckBox checkBox1;
+        private CheckBox todoCheckBox;
         private Button btnDeleteList;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private Button button1;
     }
 }
